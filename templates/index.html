@@ -1,124 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> TanujaChennaPragada AI Chat Bot 🤖</title>
+    <title>TanujaChennaPragada AI Chat Bot 🤖</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-        }
-        #chat-container {
-            width: 480px;
-            max-width: 90%;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
-            border: 2px solid #a8b5a2;
-        }
-        h2 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2em;
-            font-weight: 700;
-        }
-        h2 span {
-            color: #e74c3c;
-        }
-        #chat-box {
-            height: 420px;
-            overflow-y: auto;
-            border: 1px solid #dfe6e9;
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 15px;
-            background: #f9f9f9;
-            scrollbar-width: thin;
-            scrollbar-color: #a8b5a2 #dfe6e9;
-        }
-        .message {
-            padding: 10px 15px;
-            margin: 8px 0;
-            border-radius: 18px;
-            max-width: 75%;
-            line-height: 1.4;
-            animation: popIn 0.3s ease-out;
-            font-size: 0.95em;
-        }
-        .user {
-            background: #e74c3c;
-            color: #fff;
-            margin-left: auto;
-            border-bottom-right-radius: 4px;
-        }
-        .bot {
-            background: #a8b5a2;
-            color: #2c3c50;
-            margin-right: auto;
-            border-bottom-left-radius: 4px;
-        }
-        .loading {
-            background: none;
-            color: #7f8c8d;
-            font-style: italic;
-            margin: 10px auto;
-            text-align: center;
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-        .input-container {
-            display: flex;
-            gap: 10px;
-            background: #dfe6e9;
-            padding: 10px;
-            border-radius: 25px;
-        }
-        input[type="text"] {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 20px;
-            font-size: 1em;
-            background: #ffffff;
-            color: #333;
-            outline: none;
-        }
-        button {
-            padding: 12px 20px;
-            background: #e74c3c;
-            color: #fff;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: 500;
-        }
-        button:disabled {
-            background: #95a5a6;
-            cursor: not-allowed;
-        }
-        @keyframes popIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
+        body { font-family: 'Roboto', sans-serif; background: linear-gradient(135deg, #f5f7fa, #c3cfe2); margin: 0; min-height: 100vh; display: flex; justify-content: center; align-items: center; color: #333; }
+        #chat-container { width: 480px; max-width: 90%; background: #ffffff; padding: 25px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); position: relative; overflow: hidden; border: 2px solid #a8b5a2; }
+        h2 { color: #2c3e50; text-align: center; margin-bottom: 20px; font-size: 2em; font-weight: 700; }
+        h2 span { color: #e74c3c; }
+        #chat-box { height: 420px; overflow-y: auto; border: 1px solid #dfe6e9; border-radius: 15px; padding: 15px; margin-bottom: 15px; background: #f9f9f9; scrollbar-width: thin; scrollbar-color: #a8b5a2 #dfe6e9; }
+        .message { padding: 10px 15px; margin: 8px 0; border-radius: 18px; max-width: 75%; line-height: 1.4; animation: popIn 0.3s ease-out; font-size: 0.95em; }
+        .user { background: #e74c3c; color: #fff; margin-left: auto; border-bottom-right-radius: 4px; }
+        .bot { background: #a8b5a2; color: #2c3c50; margin-right: auto; border-bottom-left-radius: 4px; }
+        .loading { background: none; color: #7f8c8d; font-style: italic; margin: 10px auto; text-align: center; animation: blink 1s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+        .input-container { display: flex; gap: 10px; background: #dfe6e9; padding: 10px; border-radius: 25px; }
+        input[type="text"] { flex: 1; padding: 12px; border: none; border-radius: 20px; font-size: 1em; background: #ffffff; color: #333; outline: none; }
+        button { padding: 12px 20px; background: #e74c3c; color: #fff; border: none; border-radius: 20px; cursor: pointer; font-size: 1em; font-weight: 500; }
+        button:disabled { background: #95a5a6; cursor: not-allowed; }
+        @keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
     </style>
 </head>
 <body>
     <div id="chat-container">
-        <h2><span> TanujaChennaPragada </span> AI Chat Bot 🤖</h2>
+        <h2><span>TanujaChennaPragada</span> AI Chat Bot 🤖</h2>
         <div id="chat-box"></div>
         <div class="input-container">
             <input type="text" id="user-input" placeholder="Type your message...">
@@ -127,6 +32,9 @@
     </div>
 
     <script>
+        const API_BASE = "http://13.233.88.182:8080"; // Flask backend
+        const USER_ID = "Tanuja"; // default user
+
         async function sendMessage() {
             const input = document.getElementById('user-input');
             const sendButton = document.getElementById('send-button');
@@ -135,15 +43,14 @@
 
             sendButton.disabled = true;
             appendMessage(message, 'user');
-            appendMessage('Typing...', 'loading');
+            appendLoading();
             input.value = '';
 
             try {
-                const API_URL = "http://3.110.83.49:8080/chat"; // Flask backend
-                const response = await fetch(API_URL, {
+                const response = await fetch(`${API_BASE}/chat`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message })
+                    body: JSON.stringify({ message: message, user_id: USER_ID })
                 });
 
                 removeLoading();
@@ -153,11 +60,7 @@
                 }
 
                 const data = await response.json();
-                if (data.error) {
-                    appendMessage(`⚠️ Error: ${data.error}`, 'bot');
-                } else {
-                    appendMessage(data.response, 'bot');
-                }
+                appendMessage(data.response || "No response", 'bot');
 
             } catch (error) {
                 removeLoading();
@@ -176,10 +79,36 @@
             chatBox.scrollTop = chatBox.scrollHeight;
         }
 
-        function removeLoading() {
-            const loadingMessage = document.querySelector('.loading');
-            if (loadingMessage) loadingMessage.remove();
+        function appendLoading() {
+            const chatBox = document.getElementById('chat-box');
+            const loadingDiv = document.createElement('div');
+            loadingDiv.classList.add('message', 'loading');
+            loadingDiv.textContent = 'Typing...';
+            chatBox.appendChild(loadingDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
         }
+
+        function removeLoading() {
+            const loadingDiv = document.querySelector('.message.loading');
+            if (loadingDiv) loadingDiv.remove();
+        }
+
+        async function loadHistory() {
+            try {
+                const response = await fetch(`${API_BASE}/history?user_id=${USER_ID}`);
+                const data = await response.json();
+                if (Array.isArray(data)) {
+                    data.forEach(item => {
+                        appendMessage(item.user_message, 'user');
+                        appendMessage(item.bot_reply, 'bot');
+                    });
+                }
+            } catch (error) {
+                console.error("History load failed:", error);
+            }
+        }
+
+        window.onload = loadHistory;
     </script>
 </body>
 </html>
